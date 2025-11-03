@@ -9,7 +9,7 @@ quiz_questions = [
     },
     {
         'id': 2,
-        'question': "02) Les capitaux propres sont des ressources apportées par les actionnaires et peuvent également être dégagés par l'entreprise :",
+        'question': "02) Les capitaux propres sont des ressources apportées par les actionnaires et peuvent également être dégagées par l'entreprise :",
         'options': {'A': "Vrai", 'B': "Faux"},
         'correct_answer': 'A'
     },
@@ -17,19 +17,19 @@ quiz_questions = [
         'id': 3,
         'question': "03) La couverture sur un marché est :",
         'options': {'A': "Une assurance de gains.", 'B': "Une assurance de certitude."},
-        'correct_answer': 'B' # Hedging/Couverture vise la certitude/réduction de risque
+        'correct_answer': 'B' 
     },
     {
         'id': 4,
         'question': "04) La prime :",
         'options': {'A': "D'un call dépend positivement du prix à payer ou du taux d'intérêt.", 'B': "D'un call dépend positivement des taux d'intérêt.", 'C': "D'une option dépend négativement de la volatilité de l'actif sous-jacent."},
-        'correct_answer': 'B' # La prime d'un call dépend positivement du taux d'intérêt
+        'correct_answer': 'B' 
     },
     {
         'id': 5,
         'question': "05) Les 2 composantes de la prime d'option :",
         'options': {'A': "La valeur intrinsèque.", 'B': "La valeur de temps."},
-        'correct_answer': 'A' # La question est mal posée dans l'examen. Les deux (A et B) sont les composantes, je prends A
+        'correct_answer': 'A' 
     },
     {
         'id': 6,
@@ -53,7 +53,7 @@ quiz_questions = [
         'id': 9,
         'question': "09) On quantifie un taux d'intermédiation bancaire de 60 % si :",
         'options': {'A': "60 % des crédits sont effectués par les banques.", 'B': "Cela mesure la part des financements indirects par rapport aux financements directs.", 'C': "Cela mesure l'autofinancement des entreprises."},
-        'correct_answer': 'B' # Taux d'intermédiation: Financements indirects / Financements directs
+        'correct_answer': 'B' 
     },
     {
         'id': 10,
@@ -77,7 +77,7 @@ quiz_questions = [
         'id': 13,
         'question': "13) Un investissement de 1000 Dh procure des recettes nettes sur quatre années respectivement de 300, 400, 400 et 500. Le taux d'actualisation est de 11%. Quel est le montant de la valeur actuelle nette VAN ?",
         'options': {'A': "261,759", 'B': "216,759", 'C': "221,759"},
-        'correct_answer': 'C' 
+        'correct_answer': 'B' 
     },
     {
         'id': 14,
@@ -95,7 +95,7 @@ quiz_questions = [
         'id': 16,
         'question': "16) Le coût de l'investissement est compris entre :",
         'options': {'A': "150,39 et 147,88", 'B': "152,24 et 148,12", 'C': "149,87 et 146,59"},
-        'correct_answer': 'C' # Basé sur le calcul (150-5) * 1000 et (150-5)*1000 / (1+taux), les valeurs dans la réponse initiale de l'examen sont '149,87 et 146,59'
+        'correct_answer': 'C' 
     },
     {
         'id': 17,
@@ -113,37 +113,37 @@ quiz_questions = [
         'id': 19,
         'question': "19) La formule =SI(C2>=10 ; \"Pas de remise\" ; SI(C2>=5 ; \"Remise de 10%\" ; \"Remise de 15%\")) est stockée en C3. La cellule C2 contient la valeur 20. La valeur stockée en C3 sera :",
         'options': {'A': "Pas de remise", 'B': "Remise de 10%", 'C': "Remise de 15%"},
-        'correct_answer': 'A' # C2=20, 20 est >= 10, donc "Pas de remise"
+        'correct_answer': 'A' 
     },
     {
         'id': 20,
         'question': "20) La formule =RECHERCHEV(\"Ingénieur\" ; A3:D20 ; 3 ; FAUX) permet de chercher la cellule A22, \"Elle\" permet de réaliser la recherche dans D20 et elle renvoie la valeur stockée en 4ème position :",
         'options': {'A': "Vrai", 'B': "Faux"},
-        'correct_answer': 'B' # La description est erronée. Le 3ème argument (3) renvoie la 3ème colonne, pas la 4ème position, et ce n'est pas A22
+        'correct_answer': 'B' 
     },
     {
         'id': 21,
         'question': "21) La formule =SI(ET(C1<100 ; C2>1) ; \"Achat Conseillé\" ; \"Achat Négocié\") est stockée en C3. La cellule C1 contient la valeur 150 et la cellule C2 contient la valeur 1. La valeur stockée en C3 sera :",
         'options': {'A': "Achat Conseillé", 'B': "Achat Négocié"},
-        'correct_answer': 'B' # C1=150 (la condition C1<100 est Fausse). La formule retourne la valeur_si_faux, donc "Achat Négocié"
+        'correct_answer': 'B' 
     },
     {
         'id': 22,
         'question': "22) La formule =RECHERCHEV(B14 ; B6:C12 ; 2 ; FAUX) permet de rechercher une valeur dans une liste :",
         'options': {'A': "Triée", 'B': "Non triée", 'C': "Triée ou non triée B6 : B12"},
-        'correct_answer': 'B' # L'argument FAUX (ou 0) signifie que la liste doit être cherchée pour une correspondance exacte, et peut ne pas être triée
+        'correct_answer': 'B' 
     },
     {
         'id': 23,
         'question': "23) En utilisant la fonction SI() pour afficher l'observation (Non admis (Moyenne<5) ; Rattrapage (moyenne >=5 et <10) ; Admis (Moyenne>=10)) selon la moyenne de trois notes B3, C3, et D3, la formule pourrait ressembler à :",
         'options': {'A': "=SI(Moyenne(B3 :D3)<5 ; \"Non Admis\" ; SI (E3<10 ; \"Rattrapage\" ; \"Admis\"))", 'B': "=SI(Moyenne(B3 :D3)<10 ; \"Rattrapage\" ; SI(Moyenne(B3 :D3)>=10 ; \"Admis\" ; \"Non Admis\"))", 'C': "Aucune réponse."},
-        'correct_answer': 'A' # Le format le plus logique des réponses est le A
+        'correct_answer': 'A' 
     },
     {
         'id': 24,
         'question': "24) La plage C13 : C20 contient les valeurs 1, 5, 10, 20, 30, 50, 60. Et la plage D13 : D20 contiennent A, B, C, D, A, H, H. La formule =RECHERCHEV(39 ; $C$35:$D$20 ; 2 ; VRAI) :",
         'options': {'A': "E", 'B': "F", 'C': "Une erreur se produit"},
-        'correct_answer': 'C' # La plage de recherche est incorrecte ($C$35:$D$20 est en dehors de C13:C20)
+        'correct_answer': 'C' 
     },
     {
         'id': 25,
@@ -155,7 +155,7 @@ quiz_questions = [
         'id': 26,
         'question': "26) Si la cellule A1 contient la valeur 15, la formule : =SI(A1<15 ; SI(A1<10 ; \"A\" ; \"B\") ; SI(A1<16 ; \"C\" ; \"A++\")) renvoie la valeur :",
         'options': {'A': "A", 'B': "C", 'C': "A+"},
-        'correct_answer': 'B' # A1=15. (A1<15) est Faux. On passe au 3ème argument: SI(A1<16 ; "C" ; "A++"). A1<16 est Vrai. La formule renvoie "C"
+        'correct_answer': 'B' 
     },
     {
         'id': 27,
@@ -179,18 +179,18 @@ quiz_questions = [
         'id': 30,
         'question': "30) Quelle est la valeur finale de *somme* après l'exécution de cet algorithme ?\n`somme ← 0`\n`Pour i de 1 à 3 Faire`\n`  somme ← somme + i * 2`\n`FinPour`",
         'options': {'A': "2", 'B': "6", 'C': "12"},
-        'correct_answer': 'C' # i=1: somme=2. i=2: somme=6. i=3: somme=12
+        'correct_answer': 'C' 
     },
     {
         'id': 31,
         'question': "31) Quel est le résultat du pseudocode suivant ?\n`Pour i = 1 à 5`\n`  Si i mod 3 = 0 Alors`\n`    afficher(i, \"est divisible par 3\")`\n`  FinSi`\n`FinPour`",
         'options': {'A': "Il affiche \"1 est divisible par 3\", \"2 est divisible par 3\", \"3 est divisible par 3\"", 'B': "Il affiche \"3 est divisible par 3\"", 'C': "Il n'affiche aucun résultat"},
-        'correct_answer': 'B' # Seul 3 mod 3 = 0
+        'correct_answer': 'B' 
     },
     {
         'id': 32,
         'question': "32) Quel est le résultat de l'exécution suivante ? pour chaque MHT dans [1500, 1200, 500, 2500]\n`Si MHT > 2000 Alors`\n`  break`\n`FinSi`\n`TVA ← MHT * 0.2`\n`TTC ← MHT + TVA`\n`afficher(\"Montant HT: \", MHT, \", Montant TTC: \", TTC)`\n`FinPour`",
         'options': {'A': "Montant HT: 1500, Montant TTC: 1800; Montant HT: 1200, Montant TTC: 1440; Montant HT: 500, Montant TTC: 600", 'B': "Montant HT: 1500, Montant TTC: 1800; Montant HT: 1200, Montant TTC: 1440; Montant HT: 500, Montant TTC: 600; Montant HT: 2500, Montant TTC: 3000", 'C': "Aucun résultat, car 500 est inférieur à 2000."},
-        'correct_answer': 'A' # break s'exécute à MHT=2500, donc seuls les 3 premiers sont affichés.
+        'correct_answer': 'A' 
     }
 ]

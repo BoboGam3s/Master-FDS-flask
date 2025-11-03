@@ -3,44 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Le contenu de 'title' sera remplacé par chaque template enfant (ex: index.html) -->
+    <!-- FAVICON (MASTER LOGO) -->
+    <link rel="icon" href="{{ url_for('static', filename='images/MASTER_LOGO.jpg') }}" type="image/jpg">
+    
     <title>{% block title %}Préparation Concours Master FDS{% endblock %}</title>
-    <!-- Lien vers le fichier CSS (Style) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
-    <div class="container header-content"> <!-- AJOUT DE LA CLASSE header-content -->
-        <div class="header-logo-title">
-            <!-- AJOUT DU LOGO -->
-            <img src="{{ url_for('static', filename='images/FSJESM_LOGO.jpg') }}" alt="Logo Université Hassan II" class="university-logo">
-            <h1>Préparation Concours Master FDS</h1>
+        <div class="container header-content">
+            <div class="header-logo-title">
+                
+                <!-- LOGO FACULTÉ (FSJESM) -->
+                <img src="{{ url_for('static', filename='images/FSJESM_LOGO.jpg') }}" alt="Logo Université Hassan II" class="university-logo">
+                
+                <!-- NOM COMPLET DU MASTER -->
+                <h1>Préparation Concours: <br>
+                    Master Finance et Data Science</h1> 
+            </div>
+            
+            <div class="header-controls">
+                
+                <nav>
+                    <!-- BOUTON HAMBURGER (Mobile) -->
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+                    <ul id="main-nav">
+                        <li><a href="{{ url_for('index') }}">Accueil / Quiz</a></li>
+                        <li><a href="{{ url_for('examen_precedent') }}">Examen Précédent (Image)</a></li>
+                        <li><a href="{{ url_for('ressources') }}">Ressources</a></li>
+                        <!-- BOUTON DARK MODE DANS LE MENU MOBILE -->
+                        <li>
+                            <button id="theme-toggle" aria-label="Basculer le thème" class="theme-button-nav">
+                                ☀️ / 🌙
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- BOUTON DARK MODE DESKTOP -->
+                <button id="theme-toggle-desktop" aria-label="Basculer le thème" class="theme-button">
+                    ☀️ / 🌙
+                </button>
+            </div>
         </div>
-        
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Accueil / Quiz</a></li>
-                <li><a href="{{ url_for('examen_precedent') }}">Examen Précédent (Image)</a></li>
-                <li><a href="{{ url_for('ressources') }}">Ressources</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
+
     <main class="container">
-        <!-- C'est ici que le contenu spécifique de chaque page (ex: index.html, ressources.html) sera injecté -->
         {% block content %}{% endblock %}
     </main>
 
     <footer>
-    <div class="container">
-        <p>Créé par : AKKAD Abdelmoughit</p>
-        <p>&copy; 2025 Master Finance & Data Science.</p>
-        <!-- AJOUT DE VOTRE NOM -->
-    </div>
-</footer>
+        <div class="container">
+            <p>&copy; Master Finance & Data Science 2025-2026.</p>
+            <p>Créé par : AKKAD Abdelmoughit</p>
+        </div>
+    </footer>
     
-    <!-- Lien vers le fichier JavaScript (Logique du Quiz, Timer) -->
-    <!-- Ce script s'exécutera sur toutes les pages, mais la logique du quiz n'affectera que la page index -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

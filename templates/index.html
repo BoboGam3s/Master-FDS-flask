@@ -10,7 +10,8 @@
 <h2>Quiz de Préparation - Basé sur l'Examen Précédent</h2>
 
 <div class="quiz-controls">
-    <p><strong>Temps restant:</strong> <span id="timer">--:--</span></p>
+    <!-- Le Timer en Rouge -->
+    <p><strong>Temps restant:</strong> <span id="timer" class="timer-red">--:--</span></p>
 </div>
 
 <form id="quiz-form">
@@ -34,7 +35,7 @@
     <button type="submit" id="submit-button">Soumettre et Voir les Résultats</button>
 </form>
 
-<div id="results-summary"></div>
+<div id="results-summary">Votre Score: 0 / 32 (0.00%)</div>
 
 <script>
     // Récupère toutes les questions pour le script.js
@@ -44,7 +45,6 @@
                 id: {{ q.id }},
                 correct_answer: "{{ q.correct_answer }}"
             }
-            // Correction de la virgule pour la syntaxe JS
             {% if not loop.last %},{% endif %} 
         {% endfor %}
     ];

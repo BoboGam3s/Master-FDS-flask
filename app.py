@@ -9,7 +9,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Affiche la page d'accueil avec le quiz interactif."""
-    # Passage des questions au template HTML
     return render_template('index.html', questions=quiz_questions)
 
 @app.route('/examen_precedent')
@@ -22,15 +21,6 @@ def ressources():
     """Page d'exemple pour les ressources de préparation."""
     return render_template('ressources.html')
 
-# Note: Pour un quiz simple, la correction se fait via JavaScript (voir script.js). 
-# Pour un système plus avancé, on pourrait ajouter une route POST /submit_quiz
-
-# Lancement du serveur
-# app.py (Partie corrigée)
-# ... (votre code précédent)
-
-# Lancement du serveur
+# Lancement du serveur (Non exécuté sur Vercel, mais utile pour le développement local)
 if __name__ == '__main__':
-    # Le mode debug est utile pendant le développement
-    # L'erreur est ici : assurez-vous qu'il n'y a PAS de ``` ni de """ après le True)
     app.run(debug=True)
