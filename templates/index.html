@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz interactif - Master FDS{% endblock %}
+
+{% block content %}
+<p class="motivational-message">
+    Bonne chance à tous les étudiants qui préparent le concours écrit du Master Finance et Data Science !
+</p>
+
+<h2>Quiz de Préparation - Basé sur l'Examen Précédent</h2>
+
+<div class="quiz-controls">
+    <p><strong>Temps restant:</strong> <span id="timer">--:--</span></p>
+</div>
+
+<form id="quiz-form">
+    {% for q in questions %}
+    <div class="question-container" data-id="{{ q.id }}" data-correct-answer="{{ q.correct_answer }}">
+        <p class="question-number">Question {{ q.id }}</p>
+        <p class="question-text">{{ q.question | safe }}</p>
+        
+        <div class="options">
+            {% for key, value in q.options.items() %}
+            <label class="option-label">
+                <input type="radio" name="q_{{ q.id }}" value="{{ key }}">
+                <span class="option-key">{{ key }})</span> {{ value | safe }}
+            </label>
+            {% endfor %}
+        </div>
+        <div class="feedback" id="feedback_{{ q.id }}"></div>
+    </div>
+    {% endfor %}
+
+    <button type="submit" id="submit-button">Soumettre et Voir les Résultats</button>
+</form>
+
+<div id="results-summary"></div>
+
+<script>
+    // Récupère toutes les questions pour le script.js
+    const quizQuestions = [
+        {% for q in questions %}
+            {
+                id: {{ q.id }},
+                correct_answer: "{{ q.correct_answer }}"
+            }
+            // Correction de la virgule pour la syntaxe JS
+            {% if not loop.last %},{% endif %} 
+        {% endfor %}
+    ];
+</script>
+
+{% endblock %}

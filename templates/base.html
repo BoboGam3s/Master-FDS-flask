@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le contenu de 'title' sera remplacé par chaque template enfant (ex: index.html) -->
+    <title>{% block title %}Préparation Concours Master FDS{% endblock %}</title>
+    <!-- Lien vers le fichier CSS (Style) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+    <div class="container header-content"> <!-- AJOUT DE LA CLASSE header-content -->
+        <div class="header-logo-title">
+            <!-- AJOUT DU LOGO -->
+            <img src="{{ url_for('static', filename='images/FSJESM_LOGO.jpg') }}" alt="Logo Université Hassan II" class="university-logo">
+            <h1>Préparation Concours Master FDS</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Accueil / Quiz</a></li>
+                <li><a href="{{ url_for('examen_precedent') }}">Examen Précédent (Image)</a></li>
+                <li><a href="{{ url_for('ressources') }}">Ressources</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <main class="container">
+        <!-- C'est ici que le contenu spécifique de chaque page (ex: index.html, ressources.html) sera injecté -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+    <div class="container">
+        <p>Créé par : AKKAD Abdelmoughit</p>
+        <p>&copy; 2025 Master Finance & Data Science.</p>
+        <!-- AJOUT DE VOTRE NOM -->
+    </div>
+</footer>
+    
+    <!-- Lien vers le fichier JavaScript (Logique du Quiz, Timer) -->
+    <!-- Ce script s'exécutera sur toutes les pages, mais la logique du quiz n'affectera que la page index -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

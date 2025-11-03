@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Examen Précédent - Master FDS{% endblock %}
+
+{% block content %}
+<h2>Examen Écrit Master FDS - Année Précédente</h2>
+
+<p>Voici les pages de l'examen de l'année précédente pour référence. Bonne lecture !</p>
+
+<div class="exam-image-container">
+    {% set pages = [1, 2, 3] %}
+    {% for page_num in pages %}
+    <p><strong>Page {{ page_num }}</strong></p>
+    <img src="{{ url_for('static', filename='images/exam_page_' ~ page_num ~ '.jpg') }}" 
+         alt="Image de la page {{ page_num }} de l'Examen Écrit" 
+         class="full-width-image">
+    {% endfor %}
+</div>
+
+<p><strong>Conseil :</strong> Utilisez le <a href="{{ url_for('index') }}">Quiz interactif</a> pour tester vos connaissances sur ces questions.</p>
+
+{% endblock %}

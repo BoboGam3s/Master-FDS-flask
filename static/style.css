@@ -1,0 +1,231 @@
+/* style.css */
+
+:root {
+    --primary-color: #004d99; /* Bleu foncé pour l'académique */
+    --secondary-color: #f7b32c; /* Jaune/Orange pour l'accentuation */
+    --background-color: #f4f7f6;
+    --text-color: #333;
+    --success-color: #4CAF50;
+    --error-color: #f44336;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Main Content (Quiz) --- */
+h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.question-container {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question-number {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.question-text {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-label {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.option-label:hover {
+    background-color: #dee2e6;
+}
+
+/* Styles pour le feedback après soumission */
+.option-label.correct {
+    background-color: var(--success-color);
+    color: white;
+    font-weight: bold;
+}
+
+.option-label.incorrect {
+    background-color: var(--error-color);
+    color: white;
+    opacity: 0.8;
+}
+
+.option-label input[type="radio"]:checked + .option-key {
+    font-weight: bold;
+}
+
+.feedback {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none; /* Caché par défaut */
+}
+
+/* --- Bouton Soumettre --- */
+#submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+#submit-button:hover {
+    background-color: #e6a529;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+/* --- Examen Page Styling --- */
+.exam-image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.full-width-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Quiz Controls --- */
+.quiz-controls {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+#timer {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+#results-summary {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+/* --- Nouveaux Styles pour le Header (Logo et Titre) --- */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espace entre le logo et le titre */
+}
+
+.university-logo {
+    height: 60px; /* Taille esthétique pour le logo */
+    width: auto;
+    background-color: white; /* Pour les logos avec fond transparent ou bordure */
+    padding: 5px;
+    border-radius: 50%; /* Rendre le logo circulaire pour un look moderne */
+}
+
+header h1 {
+    font-size: 1.6em; /* Ajuster la taille du titre */
+    margin: 0;
+}
+
+/* --- Style pour le message de motivation --- */
+.motivational-message {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
